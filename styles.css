@@ -5,6 +5,11 @@
   -webkit-box-sizing: border-box;
 }
 
+:root {
+  --success-color: #2ecc71;
+  --error-color: #e74c3c;
+}
+
 body {
   padding: 0;
   margin: 0;
@@ -37,6 +42,7 @@ body {
   overflow: hidden;
   position: fixed;
   width: 100%;
+  z-index: 1;
 }
 
 .container .logo {
@@ -85,6 +91,7 @@ body {
   -ms-flex: 1;
   flex: 1;
   padding: 0 10px;
+  z-index: 1;
 }
 
 .container .navbar ul {
@@ -128,6 +135,7 @@ body {
   border: 1px solid #cccccc;
   padding: 0 10px;
   cursor: pointer;
+
 }
 
 .container .navbar .icon-bar {
@@ -227,6 +235,125 @@ div.desc {
   display: table;
   clear: both;
 }
+
+
+.contain {
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    width: 400px;
+    margin-top: 100px;
+    margin-left: 17%;
+}
+h2 {
+    text-align: center;
+    margin: 0 0 20px;
+}
+.form {
+    padding: 30px 40px;
+    position: relative;
+}
+.form-control {
+    padding-bottom: 10px;
+    position: relative;
+}
+.contain .label {
+    color: #777;
+    display: block;
+    margin-bottom: 5px;
+}
+.input {
+    border: 2px solid #f0f0f0;
+    border-radius: 4px;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 15px;
+}
+
+input:focus {
+    outline: 0;
+    border-color: #777;
+}
+.form-control small {
+    font-size: 12px;
+    background: #fff;
+    color: var(--error-color);
+    position: absolute;
+    left: 10px;
+    bottom: 5px;
+    visibility: hidden;
+}
+button {
+    cursor: pointer;
+    background: #d9a7c7; /* fallback for old browsers */
+    background: -webkit-linear-gradient(
+      to right,
+      #fffcdc,
+      #d9a7c7
+    ); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(
+      to right,
+      #fffcdc,  
+      #d9a7c7
+    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    border: 2px solid #e296c6;
+    border-radius: 4px;
+    color: #000;
+    display: block;
+    padding: 10px;
+    margin-top: 20px;
+    width: 100%;
+    font-size: 16px;
+    transition: all 0.5s ;
+  box-shadow: 0 10px 20px -8px rgba(0, 0, 0,.7);
+
+}
+
+button:hover{
+border: 2px solid #f089e2;
+background: linear-gradient(to right,#e296c6 , #F4E2D8); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+
+.form:before,.form:after {
+    content: "";
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    position: absolute;
+    background: #e296c6;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #F4E2D8, #e296c6);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #F4E2D8, #e296c6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    height: 100%;
+    z-index: -1;
+    transform: skew(5deg, 5deg);
+    filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.3));
+}
+.form:after {
+    transform: skew(-5deg, -5deg);
+}
+.form-control.error small {
+    visibility: visible;
+}
+.form-control.error input {
+  border-color: var(--error-color);
+}
+.form-control.success input {
+  border-color: var(--success-color);
+}
+
+
+.rad input {
+    margin: 5px;
+    left: 0;
+}
+
+
+
 
 /*-----------------responsive-----------*/
 @media only screen and (max-width: 650px) {
@@ -341,6 +468,14 @@ div.desc {
     width: 49.99999%;
     margin: 6px 0;
   }
+
+.contain{
+  width: 75%;
+margin-left: 12.5%;
+
+}
+
+
 }
 
 .body {

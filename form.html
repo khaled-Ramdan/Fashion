@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Serif:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+    <title>Join Us</title>
+    <script src="script.js" async defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="logo">
+        <a href="index.html"><h1>Fashion</h1></a>
+      </div>
+      <div class="navbar">
+        <div class="icon-bar" onclick="Show()">
+          <i></i>
+          <i></i>
+          <i></i>
+        </div>
+
+        <ul id="nav-lists">
+          <li class="close"><span onclick="Hide()">×</span></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="partners.html">Partners</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="body">
+      <div class="contain">
+        <form id="form" class="form" method="get">
+          <h2>Join Us</h2>
+          <div class="form-control">
+            <label for="fname" class="label">First name</label>
+            <input
+              type="text"
+              id="fname"
+              placeholder="Enter First name"
+              required
+              class="input"
+            />
+            <small>Error message</small>
+          </div>
+          <div class="form-control">
+            <label for="lname" class="label">Last name</label>
+            <input
+              type="text"
+              class="input"
+              id="lname"
+              placeholder="Enter Last name"
+              required
+            />
+            <small>Error message</small>
+          </div>
+          <div class="form-control">
+            <label for="username" class="label">Username</label>
+            <input
+              type="text"
+              id="username"
+              class="input"
+              placeholder="Enter Username"
+              required
+            />
+            <small>Error message</small>
+          </div>
+          <div class="form-control">
+            <label for="email" class="label">Email</label>
+            <input
+              type="email"
+              id="email"
+              class="input"
+              placeholder="Enter Email"
+              required
+            />
+            <small>Error message</small>
+          </div>
+          <div class="form-control">
+            <label for="phoneNum" class="label">Phone Number</label>
+            <input
+              type="tel"
+              id="phoneNum"
+              class="input"
+              placeholder="01[1:5]xxxxxx"
+              pattern="^01[0-2,5]\d{8}$"
+              required
+            />
+            <small>Error message</small>
+          </div>
+          <div class="form-control">
+            <label for="adress" class="label">Adress</label>
+            <input
+              type=""
+              id="adress"
+              class="input"
+              placeholder="Enter Your Adress"
+              required
+            />
+            <small>Error message</small>
+          </div>
+          <div class="form-control">
+            <label for="password" class="label">Password</label>
+            <input
+              type="password"
+              id="password"
+              class="input"
+              placeholder="Enter Password"
+              required
+            />
+            <small>Error message</small>
+          </div>
+          <div class="form-control">
+            <label for="password2" class="label">Confirm Password</label>
+            <input
+              type="password"
+              id="password2"
+              class="input"
+              placeholder="Enter Password Again"
+              required
+            />
+            <small>Error message</small>
+          </div>
+          <div class="form-control">
+            <label class="label">Gender</label><br />
+            <input type="radio" id="male" name="gender" value="male" checked />
+            <label for="male" style="margin-right: 20px">Male</label>
+            <input type="radio" id="female" name="gender" value="female" />
+            <label for="female">Female</label><br />
+          </div>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+
+    <script>
+      const form = document.getElementById("form");
+      const username = document.getElementById("username");
+      const email = document.getElementById("email");
+      const password = document.getElementById("password");
+      const password2 = document.getElementById("password2");
+
+      //Show input error message
+      function ShowError(input, message) {
+        const formControl = input.parentElement;
+        formControl.className = "form-control error";
+        const small = formControl.querySelector("small");
+        small.innerText = message;
+      }
+
+      //Show input success
+      function ShowSuccess(input) {
+        const formControl = input.parentElement;
+        formControl.className = "form-control success";
+      }
+
+      //Check email
+      function CheckEmail(input) {
+        const char =
+          /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        if (char.test(input.value.trim())) {
+          ShowSuccess(input);
+        } else {
+          ShowError(input, "Email is not valid");
+        }
+      }
+      function CheckRequired(inputErr) {
+        inputErr.forEach(function (input) {
+          if (input.value.trim() === "") {
+            ShowError(input, `${getFieldName(input)} is required`);
+          } else {
+            ShowSuccess(input);
+          }
+        });
+      }
+
+      function CheckLenght(input, min, max) {
+        if (input.value.length < min) {
+          ShowError(
+            input,
+            `${getFieldName(input)} must be at least ${min} characters`
+          );
+        } else if (input.value.length > max) {
+          ShowError(
+            input,
+            `${getFieldName(input)} must be less then ${max} characters`
+          );
+        } else {
+          ShowSuccess(input);
+        }
+      }
+
+      function CheckPassword(input) {
+        if (password.value.length !== 8) {
+          ShowError(input, `${getFieldName(input)} must be 8 characters`);
+        }
+        if (/[a-zA-Z]/.test(password.value.substring(0, 1)) != true) {
+          ShowError(input, `${getFieldName(input)}  must start with letter`);
+        }
+        if (
+          password.value.substring(0, 1) !==
+          password.value.substring(0, 1).toUpperCase()
+        ) {
+          ShowError(
+            input,
+            `${getFieldName(input)}  must start with Upper case letter`
+          );
+        }
+        if (/\d/.test(password.value) != true) {
+          ShowError(
+            input,
+            `${getFieldName(input)}  must include at least one number`
+          );
+        }
+        if (
+          /[ `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/.test(password.value) !=
+          true
+        ) {
+          ShowError(
+            input,
+            `${getFieldName(
+              input
+            )}  must include at least one special charactar`
+          );
+        }
+        if (/\s/.test(password.value) == true) {
+          ShowError(input, `${getFieldName(input)}  can not contain spaces`);
+        }
+      }
+
+      function CheckPasswordsMatch(input1, input2) {
+        if (input1.value !== input2.value) {
+          ShowError(input2, "Password do not match");
+        }
+      }
+
+      function getFieldName(input) {
+        return input.id.charAt(0).toUpperCase() + input.id.slice(1);
+      }
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        CheckRequired([username, email, password, password2]);
+        CheckLenght(username, 3, 15);
+        CheckPassword(password);
+        CheckEmail(email);
+        CheckPasswordsMatch(password, password2);
+      });
+    </script>
+  </body>
+</html>

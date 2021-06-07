@@ -1,3 +1,4 @@
+
 const faceImg = document.querySelector(".model_face");
 var navList = document.getElementById("nav-lists");
 
@@ -30,3 +31,4 @@ navList.classList.add("_Menus-show");
 function Hide(){
 navList.classList.remove("_Menus-show");
 }
+
