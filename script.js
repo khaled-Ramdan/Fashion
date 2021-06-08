@@ -6,7 +6,8 @@ const faces = [
     "./images/ronaldo.png",
     "./images/pexels-lena-hsvl-6851541.jpg",
     "./images/Benzema.png",
-    "./images/pexels-lena-hsvl-6691175.jpg"
+    "./images/pexels-lena-hsvl-6691175.jpg",
+    "./images/swift.jpg"
 ]
 
 let DURATION = 3000
