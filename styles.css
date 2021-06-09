@@ -413,6 +413,17 @@ background: linear-gradient(to right, #F4E2D8, #e296c6); /* W3C, IE 10+/ Edge, F
   width: 100%;
 }
 
+select{
+  border-width: 3px;
+  border-radius: 5px;
+  padding: 4px;
+  width: 100px;
+  text-align: center;
+  border-color: #bebebe;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+
+}
+
 footer{
   text-align: center ;
   bottom: 0;
