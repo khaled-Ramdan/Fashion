@@ -284,7 +284,7 @@ input:focus {
     bottom: 5px;
     visibility: hidden;
 }
-button {
+button , .mailto{
     cursor: pointer;
     background: #d9a7c7; /* fallback for old browsers */
     background: -webkit-linear-gradient(
@@ -310,7 +310,7 @@ button {
 
 }
 
-button:hover{
+button:hover , .mailto:hover{
 border: 2px solid #f089e2;
 background: linear-gradient(to right,#e296c6 , #F4E2D8); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
@@ -351,6 +351,118 @@ background: linear-gradient(to right, #F4E2D8, #e296c6); /* W3C, IE 10+/ Edge, F
     margin: 5px;
     left: 0;
 }
+
+
+
+
+.column {
+  float: left;
+  width: 33%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+  height: 100%;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: 8px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.about-section {
+  padding: 50px;
+  text-align: center;
+  background-color: transparent;
+  color: rgb(0, 0, 0);
+}
+
+.about-container {
+  padding: 0 16px;
+}
+
+.about-container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: grey;
+}
+
+.mailto {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: #000;
+  background: #d9a7c7; /* fallback for old browsers */
+    background: -webkit-linear-gradient(
+      to right,
+      #f3efc9,
+      #da8ebe
+    ); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(
+      to right,
+      #f3efc9,  
+      #da8ebe
+    );
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+}
+
+footer{
+  text-align: center ;
+  bottom: 0;
+}
+.fa {
+  padding: 20px;
+  font-size: 40px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  border-radius: 5px;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+
+.fa-instagram {
+  background: #125688;
+  color: white;
+}
+.fa-linkedin {
+  background: #007bb5;
+  color: white;
+}
+
+.fa-youtube {
+  background: #bb0000;
+  color: white;
+}
+
+.fa-github {
+  background: #000;
+  color: white;
+}
+
+
+
 
 
 
@@ -481,11 +593,28 @@ margin-left: 12.5%;
 
 }
 
+  .column {
+    width: 100%;
+    display: block;
+  }
+  .team{
+    width: 70%;
+    margin-left: 15%;
+  }
+
+.fa{
+  padding: 15px;
+  font-size: 30px;
+  width: 40px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+}
 
 }
 
 .body {
-  max-width: 700px;
+  max-width: 800px;
   margin: 0 auto;
   padding: 10px;
 }
@@ -494,4 +623,12 @@ margin-left: 12.5%;
   .responsive {
     width: 100%;
   }
+  .team{
+    width: 100%;
+    margin-left:0;
+  }
 }
+
+
+
+
