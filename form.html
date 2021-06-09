@@ -38,7 +38,7 @@
 
     <div class="body">
       <div class="contain">
-        <form id="form" class="form" method="POST" action="index.html">
+        <form id="form" class="form" method="POST" action="/index.html">
           <h2 style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif">Join Us</h2>
           <div class="form-control">
             <label for="fname" class="label">First name</label>
@@ -130,11 +130,11 @@
             <small>Error message</small>
           </div>
           <div class="form-control">
-            <label class="label">Gender</label><br />
-            <input type="radio" id="male" name="gender" value="male" checked />
-            <label for="male" style="margin-right: 20px">Male</label>
-            <input type="radio" id="female" name="gender" value="female" />
-            <label for="female">Female</label><br />
+            <label class="label" for="gender">Gender</label><br />
+            <select name="gender" id="gender">
+    <option value="male">Male</option>
+    <option value="female">Female</option>
+  </select> <br>
           </div>
           <button type="submit">Submit</button>
         </form>
