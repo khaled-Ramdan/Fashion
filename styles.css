@@ -619,6 +619,8 @@ margin-left: 12.5%;
   padding: 10px;
 }
 
+
+
 @media only screen and (max-width: 450px) {
   .responsive {
     width: 100%;
@@ -627,8 +629,32 @@ margin-left: 12.5%;
     width: 100%;
     margin-left:0;
   }
+  footer{
+  margin-top: 150px;
+}
+}
+@media only screen and (max-width: 649px) {
+  footer{
+  margin-top: 100px;
 }
 
+}
+@media only screen and (max-width: 400px) {
+  footer{
+  margin-top: 180px;
+}
+
+}
+@media only screen and (max-width: 325px) {
+  footer{
+  margin-top: 300px;
+}
+}
+@media only screen and (max-width: 285px) {
+footer{
+  margin-top: 200px;
+}
+}
 
 
 
