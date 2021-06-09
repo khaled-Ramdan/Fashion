@@ -467,6 +467,61 @@ footer{
 
 
 
+table {
+  width: 100%;
+  max-width: 50rem;
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+  tr:nth-child(even) th {
+    color: #ccc;
+    font-weight: normal;
+  }
+  
+  th,
+  td {
+    padding: 0.5rem 1rem;
+  }
+  
+  th {
+    font-weight: normal;
+    border-top: thin dotted #ccc;
+  }
+  
+  td {
+    font-size: 0.8rem;
+    font-weight: bold;
+    line-height: 1.4;
+    border-radius: 0.2rem;
+    transition: opacity 0.3s ease;
+  }
+  
+  td > span {
+    font-size: 0.8em;
+    font-weight: normal;
+    display: block;
+    width: 100%;
+  }
+
+  tr:nth-child(odd):hover{
+    background: #dd8792;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #ffdde1, #ee9ca7);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #ffdde1, #ee9ca7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  }
+
+.colored{
+background: #ee9ca7;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #ffdde1, #ee9ca7);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #ffdde1, #ee9ca7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+
+
+
+
+
 /*-----------------responsive-----------*/
 @media only screen and (max-width: 650px) {
   body {
