@@ -17,7 +17,6 @@
       function ShowSuccess(input) {
         const formControl = input.parentElement;
           formControl.className = "form-control success";
-          count = 0;
       }
 
       //Check email
@@ -61,7 +60,7 @@
           ShowError(input, `${getFieldName(input)} must be 8 characters`);
         }
         if (/[a-zA-Z]/.test(password.value.substring(0, 1)) != true) {
-          ShowError(input, `${getFieldName(input)}  must start with letter`);
+          ShowError(input, `${getFieldName(input)}  must start letter`);
         }
         if (
           password.value.substring(0, 1) !==
@@ -104,7 +103,8 @@
         return input.id.charAt(0).toUpperCase() + input.id.slice(1);
       }
 
-      form.addEventListener('submit', (e) => {
+form.addEventListener('submit', (e) => {
+  count = 0;
         CheckRequired([username, email, password, password2]);
         CheckLenght(username, 3, 15);
         CheckPassword(password);
